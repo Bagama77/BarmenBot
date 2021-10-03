@@ -15,6 +15,7 @@ class DrinkMaker
       int processReceipt(int cocktailReceipt[][2]);  
       void processDrink(int drink[2]);
       void openCloseGap(int drink[], int servoNumber);   
+      void initServos();
 
       Servo servo4;
       Servo servo5;

@@ -89,12 +89,40 @@ void DrinkMaker::processDrink(int drink[2]){
 }
   
 void DrinkMaker::openCloseGap(int drink[], int servoNumber){
-  servo6.attach(definitions.TEKILA);
+//  servo6.attach(definitions.TEKILA);
   formatPrint("Open the gap: ", servoNumber, ".");
   servo6.write(definitions.SERVO_ANGLE_ON);//open the gap of drink (HIGH outputs 5V)  
   digitalWrite(LED_BUILTIN, HIGH);
   delay(definitions.DELAY_PART * drink[1]);
   digitalWrite(LED_BUILTIN, LOW);
   servo6.write(definitions.SERVO_ANGLE_OFF); 
+}
+
+void DrinkMaker::initServos(){
+  
+  servo4.attach(definitions.VODKA);
+  servo4.write(definitions.SERVO_ANGLE_OFF);
+  formatPrint("The servo ", definitions.VODKA, " is initialized.");
+
+  servo5.attach(definitions.TOMATO_DJ);
+  servo5.write(definitions.SERVO_ANGLE_OFF);
+  formatPrint("The servo ", definitions.TOMATO_DJ, " is initialized.");
+
+  servo6.attach(definitions.TEKILA);
+  servo6.write(definitions.SERVO_ANGLE_OFF);
+  formatPrint("The servo ", definitions.TEKILA, " is initialized.");
+
+  servo7.attach(definitions.LIME_DJ);
+  servo7.write(definitions.SERVO_ANGLE_OFF);
+  formatPrint("The servo ", definitions.LIME_DJ, " is initialized.");
+
+  servo8.attach(definitions.CUANTRO);
+  servo8.write(definitions.SERVO_ANGLE_OFF);
+  formatPrint("The servo ", definitions.CUANTRO, " is initialized.");
+
+  servo9.attach(definitions.WHISKEY);
+  servo9.write(definitions.SERVO_ANGLE_OFF);
+  formatPrint("The servo ", definitions.WHISKEY, " is initialized.");
+    
 }
       

@@ -1,4 +1,3 @@
-#include <Servo.h>
 //#include <SoftwareSerial.h>
 #include "Arduino.h"
 #include <stdio.h>
@@ -10,13 +9,6 @@
 Defns definitions2;
 DrinkMaker drinkMaker;
 char* readTransferedData();
-
-//Servo servo4;
-//Servo servo5;
-//Servo servo6;
-//Servo servo7;
-//Servo servo8;
-//Servo servo9;
 
 //Initializing peripherals
 void setup() {  
@@ -35,7 +27,7 @@ void setup() {
   initResetButton(definitions2.RESET_BTN);
 
   //Init servos
-//  initServos();
+  drinkMaker.initServos();
 }
 
 
@@ -55,32 +47,3 @@ void loop() {
     } else Serial.println("Something went wrong!");
   }
 }
-
-
-//void initServos(){
-//  
-//  servo4.attach(definitions2.VODKA);
-//  servo4.write(definitions2.SERVO_ANGLE_OFF);
-//  formatPrint("The servo ", definitions2.VODKA, " is initialized.");
-//
-//  servo5.attach(definitions2.TOMATO_DJ);
-//  servo5.write(definitions2.SERVO_ANGLE_OFF);
-//  formatPrint("The servo ", definitions2.TOMATO_DJ, " is initialized.");
-//
-//  servo6.attach(definitions2.TEKILA);
-//  servo6.write(definitions2.SERVO_ANGLE_OFF);
-//  formatPrint("The servo ", definitions2.TEKILA, " is initialized.");
-//
-//  servo7.attach(definitions2.LIME_DJ);
-//  servo7.write(definitions2.SERVO_ANGLE_OFF);
-//  formatPrint("The servo ", definitions2.LIME_DJ, " is initialized.");
-//
-//  servo8.attach(definitions2.CUANTRO);
-//  servo8.write(definitions2.SERVO_ANGLE_OFF);
-//  formatPrint("The servo ", definitions2.CUANTRO, " is initialized.");
-//
-//  servo9.attach(definitions2.WHISKEY);
-//  servo9.write(definitions2.SERVO_ANGLE_OFF);
-//  formatPrint("The servo ", definitions2.WHISKEY, " is initialized.");
-//    
-//}

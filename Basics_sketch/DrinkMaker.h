@@ -4,6 +4,8 @@
 #ifndef DRINKMAKER_H
 #define DRINKMAKER_H
 
+#include <Servo.h>
+
 class DrinkMaker 
 {
   public:
@@ -13,6 +15,13 @@ class DrinkMaker
       int processReceipt(int cocktailReceipt[][2]);  
       void processDrink(int drink[2]);
       void openCloseGap(int drink[], int servoNumber);   
+
+      Servo servo4;
+      Servo servo5;
+      Servo servo6;
+      Servo servo7;
+      Servo servo8;
+      Servo servo9;
 };
 
 #endif

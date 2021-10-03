@@ -10,7 +10,7 @@
 class Defns {
   public:
           //Definitions of pinouts to drinks
-          int VODKA     =4;                   //VODKA
+          int VODKA     = 4;                   //VODKA
           int TOMATO_DJ = 5;                   //TOMATO DJUCE
           int TEKILA    = 6;                   //TEKILA
           int LIME_DJ   = 7;                   //LIME DJUCE
@@ -20,7 +20,8 @@ class Defns {
           int RESET_BTN       = 13;
           int I2C_SPEED       = 9600;
           int SERVO_ANGLE_OFF = 0;
-          int SERVO_ANGLE_ON  = 45;
+          int SERVO_ANGLE_ON  = 180;
+          int DELAY_PART      = 1000;
 
           //Definitions of quantities
           int ML10 = 2;

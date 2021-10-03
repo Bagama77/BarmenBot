@@ -8,8 +8,8 @@
 #include "Definitions.h"
 #include "PrintFormat.h"
 #include "DrinkMaker.h"
-#include <AceCommon.h>
-using namespace ace_common;
+
+Servo servo;
 
 Defns definitions;
 
@@ -39,15 +39,15 @@ int DrinkMaker::createCocktail(int cocktail){
       break;
     case 2:
       processReceipt(definitions.BLOOD_MARY);
-      result = 4;
+      result = 2;
       break;
     case 3:
       processReceipt(definitions.WHISKEY50);
-      result = 2;
+      result = 3;
       break;
     case 4:
       processReceipt(definitions.WHISKEY100);
-      result = 3;
+      result = 4;
       break;
     case 5:
       processReceipt(definitions.VODKA50);
@@ -61,7 +61,7 @@ int DrinkMaker::createCocktail(int cocktail){
       Serial.println("The cocktail is not exists.");
       break;
   }
-  Serial.println("PROCESS RECEIPT #");Serial.println(result);
+  Serial.print("PROCESS RECEIPT #");Serial.println(result);
   return result;
 }
   
@@ -89,8 +89,12 @@ void DrinkMaker::processDrink(int drink[2]){
 }
   
 void DrinkMaker::openCloseGap(int drink[], int servoNumber){
-//  servo4.write(SERVO_ANGLE_ON); //digitalWrite(drink[0], HIGH);     //open the gap of drink (HIGH outputs 5V)  
-  delay(100 * drink[1]);
-//  servo4.write(SERVO_ANGLE_OFF); //digitalWrite(drink[0], LOW);
+  servo6.attach(definitions.TEKILA);
+  formatPrint("Open the gap: ", servoNumber, ".");
+  servo6.write(definitions.SERVO_ANGLE_ON);//open the gap of drink (HIGH outputs 5V)  
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(definitions.DELAY_PART * drink[1]);
+  digitalWrite(LED_BUILTIN, LOW);
+  servo6.write(definitions.SERVO_ANGLE_OFF); 
 }
       

@@ -5,7 +5,6 @@
 #define INIT_H
 
 #include "Arduino.h"
-#include <SoftwareSerial.h>
 
 //initialise outputs to drinks
 void initOutputs();
@@ -15,5 +14,8 @@ void initSerialPort(int baudRate);
 
 //Init reset button
 void initResetButton(int button);
+
+//Init of bluetooth
+//  initBluetooth();
 
 #endif

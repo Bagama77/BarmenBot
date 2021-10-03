@@ -1,24 +1,30 @@
+#include <AceCommon.h>
+
 /*
   Methods for making cocktails
 */
 
 #include "Arduino.h"
-#include <SoftwareSerial.h>
 #include "Definitions.h"
 #include "PrintFormat.h"
 #include "DrinkMaker.h"
+#include <AceCommon.h>
+using namespace ace_common;
 
 Defns definitions;
 
 DrinkMaker::DrinkMaker (){};
 int DrinkMaker::defineCocktail(char *cocktailrequest){
-  if(cocktailrequest[0] == 'M' && cocktailrequest[1] == 'A' && cocktailrequest[2] == 'R') return 1;
-  if(cocktailrequest[0] == 'B' && cocktailrequest[1] == 'L' && cocktailrequest[2] == 'O') return 2;
-  if(cocktailrequest[0] == 'W' && cocktailrequest[1] == 'H' && cocktailrequest[7] == '5') return 3;
-  if(cocktailrequest[0] == 'W' && cocktailrequest[1] == 'H' && cocktailrequest[7] == '1') return 4;
-  if(cocktailrequest[0] == 'V' && cocktailrequest[1] == 'O' && cocktailrequest[5] == '5') return 5;
-  if(cocktailrequest[0] == 'V' && cocktailrequest[1] == 'O' && cocktailrequest[5] == '1') return 6;
-  return 0;
+  int result = 0;
+  
+  if(compareStr("MARGARITA_", cocktailrequest)) result = 1;
+  if(compareStr("BLOODMARY_", cocktailrequest)) result = 2;
+  if(compareStr("WHISKEY50_", cocktailrequest)) result = 3;
+  if(compareStr("WHISKEY100", cocktailrequest)) result = 4;
+  if(compareStr("VODKA_50__", cocktailrequest)) result = 5;
+  if(compareStr("VODKA100__", cocktailrequest)) result = 6;
+  formatPrint("defineCocktail result = ", result, ".");
+  return result;
 }
   
   
@@ -55,6 +61,7 @@ int DrinkMaker::createCocktail(int cocktail){
       Serial.println("The cocktail is not exists.");
       break;
   }
+  Serial.println("PROCESS RECEIPT #");Serial.println(result);
   return result;
 }
   

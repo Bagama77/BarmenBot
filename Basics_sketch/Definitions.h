@@ -36,12 +36,20 @@ class Defns {
           int ML100 = 20;
 
           //Receipts
-          int MARGARITA[3][2] = {{TEKILA, ML30},{LIME_DJ, ML30},{CUANTRO, ML30}};
-          int BLOOD_MARY[3][2] = {{VODKA, ML50},{TOMATO_DJ, ML50}};
-          int WHISKEY50[1][2] = {{WHISKEY, ML50}};
-          int WHISKEY100[1][2] = {{WHISKEY, ML100}};
-          int VODKA50[1][2] = {{VODKA, ML100}}; 
-          int VODKA100[1][2] = {{VODKA, ML50}}; 
+          int MARGARITA[3][2] = {{TEKILA, ML30},{LIME_DJ, ML30},{CUANTRO, ML30}}; //receipt #1 in defineCocktail()
+          int BLOOD_MARY[3][2] = {{VODKA, ML50},{TOMATO_DJ, ML50}};               //receipt #2
+          int WHISKEY50[1][2] = {{WHISKEY, ML50}};                                //receipt #3
+          int WHISKEY100[1][2] = {{WHISKEY, ML100}};                              //receipt #4
+          int VODKA50[1][2] = {{VODKA, ML100}};                                   //receipt #5
+          int VODKA100[1][2] = {{VODKA, ML50}};                                   //receipt #6
+
+          //Names of cocktails
+          char margarita    = "MARGARITA_";
+          char bloodmary    = "BLOODMARY_";
+          char whiskey50    = "WHISKEY50_";
+          char whiskey100   = "WHISKEY100";
+          char vodka_50     = "VODKA_50__";
+          char vodka_100    = "VODKA100__";
 
 };
 

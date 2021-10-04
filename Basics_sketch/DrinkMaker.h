@@ -16,6 +16,7 @@ class DrinkMaker
       void processDrink(int drink[2]);
       void openCloseGap(int drink[], int servoNumber);   
       void initServos();
+      void makeMove(Servo servo, int drink[]);
 
       Servo servo4;
       Servo servo5;
